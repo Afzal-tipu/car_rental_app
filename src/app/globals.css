@@ -3,6 +3,30 @@
 @tailwind components;
 @tailwind utilities;
 
+/* date range styles */
+.rdrDayToday:not(.rdrDayPassive) .rdrInRange ~ .rdrDayNumber span::after,
+.rdrDayToday:not(.rdrDayPassive) .rdrStarEdge ~ .rdrDayNumber span::after,
+.rdrDayToday:not(.rdrDayPassive) .rdrEndEdge ~ .rdrDayNumber span::after,
+.rdrDayToday:not(.rdrDayPassive) .rdrSelected ~ .rdrDayNumber span::after {
+    background-color: #FFF !important;
+}
+
+.rdrDayToday .rdrDayNumber span:after {
+    background-color: #2bb97e !important;
+}
+
+.rdrMonthAndYearPickers {
+    font-size: 16px;
+}
+
+.rdrDayNumber, .rdrWeekday {
+    color: #d9f010 !important;
+    font-weight: 200 !important;
+
+}
+
+
+
 
 @layer base {
     body {
@@ -70,6 +94,13 @@
     }
     .menuItemDark {
         @apply dark:bg-gradient-to-tr from-gray-700 to-gray-900 
+    }
+
+    .rdrCalendarWrapper {
+        @apply bg-red-500
+}
+    .rdrMonth {
+        @apply bg-yellow-400
     }
 }
 
