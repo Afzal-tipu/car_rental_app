@@ -1,21 +1,76 @@
+/* globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+@layer base {
+    body {
+        @apply text-primary dark:text-white bg-body dark:bg-gray-950;
+    }
+
+    p {
+        @apply text-secondary;
+    }
+
+    .h1 {
+        @apply text-4xl text-primary font-extrabold mb-[18px];
+    }
+
+    .h2 {
+        @apply text-4xl mb-6 font-bold;
+    }
+
+    h3 {
+        @apply text-xl mb-4 font-semibold;
+    }
+
+    .description {
+        @apply text-base leading-3;
+    }
+
+    .section {
+        @apply w-full h-screen pt-[60px];
+    }
+
+    .btn {
+        @apply rounded-[10px] w-full uppercase font-medium text-white tracking-[2px] text-[13px] flex justify-center items-center transition-all duration-300;
+    }
+
+    .btn-sm {
+        @apply h-14;
+    }
+
+    .btn-lg {
+        @apply h-16;
+    }
+
+    .btn-cta {
+        @apply bg-primary h-[54px] rounded-[5px] px-4 transition-all duration-300;
+    }
+
+    .btn-primary {
+        @apply bg-primary text-white dark:bg-white dark:text-primary;
+    }
+
+    .btn-secondary {
+        @apply bg-secondary;
+    }
+
+    .btn-accent {
+        @apply bg-accent hover:bg-accent-hover;
+    }
+
+    .active {
+        @apply text-accent dark:bg-white dark:bg-opacity-10 dark:px-3 dark:py-1 dark:-mt-1 dark:rounded-md;
+    }
+
+    .menuHoverDark {
+        @apply dark:hover:bg-gradient-to-tr from-gray-800 to-gray-950 dark:hover:mx-auto dark:hover:w-5/6 dark:hover:rounded-lg 
+    }
+    .menuItemDark {
+        @apply dark:bg-gradient-to-tr from-gray-700 to-gray-900 
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
