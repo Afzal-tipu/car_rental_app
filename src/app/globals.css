@@ -26,6 +26,13 @@
 }
 
 
+/* swiper styles */
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets
+    .swiper-pagination-bullet {
+        background-color: #f13024;
+    }
+
 
 
 @layer base {
@@ -38,7 +45,7 @@
     }
 
     .h1 {
-        @apply text-4xl text-primary font-extrabold mb-[18px];
+        @apply text-4xl xl:text-[64px] text-primary dark:text-white xl:leading-[72px] font-extrabold mb-[18px];
     }
 
     .h2 {
@@ -50,11 +57,11 @@
     }
 
     .description {
-        @apply text-base leading-3;
+        @apply text-base xl:text-xl xl:leading-8 dark:text-white;
     }
 
     .section {
-        @apply w-full h-screen pt-[60px];
+        @apply w-full h-[85vh] pt-[20px];
     }
 
     .btn {
@@ -70,7 +77,7 @@
     }
 
     .btn-cta {
-        @apply bg-primary h-[54px] rounded-[5px] px-4 transition-all duration-300;
+        @apply bg-primary dark:bg-black h-[54px] rounded-[5px] px-4 transition-all duration-300;
     }
 
     .btn-primary {
@@ -102,6 +109,7 @@
     .rdrMonth {
         @apply bg-yellow-400
     }
+   
 }
 
 
