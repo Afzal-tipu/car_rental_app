@@ -50,7 +50,7 @@ export default function CarSlider() {
         {carData.map((cars, index) => {
           return (
             <SwiperSlide key={index}>
-              <div className="max-w-[385px] mx-auto sm:mx-0 shadow-md px-2 pb-2 rounded-[20px]">
+              <div className="max-w-[385px] mx-auto sm:mx-0 dark:shadow-gray-600 shadow-md px-2 pb-2 rounded-[20px]">
                 <Image src={cars.image} width={380} height={284} alt="" />
                 <div className="flex justify-between">
                   <div>

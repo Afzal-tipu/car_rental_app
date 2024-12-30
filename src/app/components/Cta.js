@@ -10,7 +10,7 @@ import { fadeIn } from "../../../variants";
 
 export default function Cta() {
   return (
-    <section className="section flex items-center bg-[#b2b7c2] dark:bg-gray-900 overflow-hidden" id="contact">
+    <section className="section flex items-center bg-[#ffffff] dark:bg-gray-900 overflow-hidden" id="contact">
       <div className="container mx-auto">
         <div className="flex flex-col md:flex-row lg:items-center">
           {/* ===== text ======= */}

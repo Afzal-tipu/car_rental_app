@@ -68,11 +68,11 @@ useEffect(()=>{
         className={`${
           header
             ? "bg-white shadow-md py-2 dark:bg-gray-900"
-            : "bg-transparent shadow-none py-4"
+            : "bg-transparent shadow-lg py-4"
         } fixed w-full max-w-[1920px] mx-auto z-20 transition-all duration-300`}
       >
-        <div className="w-full mx-auto flex flex-col xl:container xl:flex-row xl:justify-between xl:items-center ">
-          <div className="flex justify-between xl:gap-[300px] items-center px-4">
+        <div className="w-full mx-auto flex flex-col justify-between items-center container xl:grid xl:grid-cols-2 gap-x-2">
+          <div className="w-full flex justify-between xl:gap-[300px] items-center px-4">
             {/* ======= logo ============ */}
             <div className=" w-full">
               <div>
@@ -102,28 +102,25 @@ useEffect(()=>{
               </div>
             </div>
             {/* ======= theme btn ======== */}
-            <div className="flex items-center justify-center gap-8">
-              <div className="">
-                <div className="">
-                  <button
-                    className=" bg-transparent pt-1 text-2xl "
-                    onClick={handleThemeSwitch}
-                  >
-                    {theme === "light" ? <RiMoonFill /> : <RiSunFill />}
-                  </button>
-                </div>
-              </div>
-              {/* ======== nav open menu ======= */}
-              <div
-                onClick={() => setNav(!nav)}
-                className="cursor-pointer xl:hidden pt-1"
+            <div className="w-5 h-5 flex justify-center items-center gap-8">
+              <button
+                className=" bg-transparent text-2xl "
+                onClick={handleThemeSwitch}
               >
-                {nav ? (
-                  <BiX className="text-4xl" />
-                ) : (
-                  <BiMenuAltRight className="text-4xl" />
-                )}{" "}
-              </div>
+                {theme === "light" ? <RiMoonFill /> : <RiSunFill />}
+              </button>
+              
+            </div>
+            {/* ======== nav open menu ======= */}
+            <div
+              onClick={() => setNav(!nav)}
+              className="cursor-pointer xl:hidden pt-1 pl-6"
+            >
+              {nav ? (
+                <BiX className="text-4xl" />
+              ) : (
+                <BiMenuAltRight className="text-4xl" />
+              )}{" "}
             </div>
           </div>
           {/* ====== nav ========== */}
@@ -132,7 +129,7 @@ useEffect(()=>{
               nav
                 ? "max-h-max py-8 px-4 xl:py-1 xl:px-0"
                 : "max-h-0 xl:max-h-max"
-            } flex flex-col w-full gap-y-6 bg-white dark:bg-transparent overflow-hidden font-bold xl:font-medium xl:flex-row xl:w-max xl:gap-x-8 xl:h-max xl:bg-transparent xl:pb-2 transition-all duration-150 text-center xl:text-left uppercase text-sm xl:text-[16px] xl:normal-case `}
+            } flex flex-col w-full gap-y-6 bg-white dark:bg-gray-900 overflow-hidden font-bold xl:font-medium xl:flex-row xl:w-max xl:gap-x-8 xl:h-max xl:bg-transparent transition-all duration-150 text-center xl:text-left uppercase text-sm xl:text-[18px] xl:normal-case `}
           >
             <Link
               className="cursor-pointer"

@@ -12,7 +12,7 @@ import { fadeIn } from "../../../variants";
 export default function Brands() {
   return (
     <section
-      className="flex flex-col items-center justify-center pt-8 lg:pt-16 lg:h-[200px] bg-white dark:bg-transparent"
+      className="flex flex-col items-center justify-center pt-8 mb-4 lg:pt-16 lg:h-[200px] bg-white dark:bg-transparent"
     >
       <motion.div 
             variants={fadeIn("up", 0.4)}
