@@ -30,7 +30,7 @@ const [ref, inView] = useInView({
 
     return (
       <section className="section flex items-center" id="about" ref={ref}>
-        <div className="container mx-auto">
+        <div className="container mx-auto mt-7">
           <div className="flex flex-col lg:flex-row lg:justify-between gap-x-8">
             {/*  ========== image ======== */}
             <motion.div
