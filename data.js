@@ -33,8 +33,8 @@ export const carData = [
 
   {
     type: "Sedan",
-    name: "Toyota Premio",
-    price: 29,
+    name: "BMV M5",
+    price: 49,
     stars: 5,
     image: "/images/carSlider/car02.png",
     info: [

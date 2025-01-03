@@ -1,6 +1,6 @@
 "use client"
 
-import {useState, useEffect, useContext} from "react";
+import {useState, useEffect, useContext, useRef} from "react";
 
 // import image
 import Image from "next/image";
@@ -23,45 +23,45 @@ import { useMediaQuery } from "react-responsive";
 import { SearchContext } from "../context/searchContext";
 
 export default function Header() {
-const { setSearchActive , theme, handleThemeSwitch} = useContext(SearchContext);
+  const { setSearchActive, theme, handleThemeSwitch } =
+    useContext(SearchContext);
 
-const [header, setHeader] = useState(false);
-const [nav, setNav] = useState(false);
+  const [header, setHeader] = useState(false);
+  const [nav, setNav] = useState(false);
+  const ref = useRef();
 
-const deskTopMode = useMediaQuery({
-  query: '(min-width: 1300px)'
-});
-useEffect(()=>{
-  const handleScroll = () => {
-    // header
-    if (window.scrollY > 40) {
-      setHeader(true);
-    }
-    else {
-      setHeader(false);
-    }
+  const deskTopMode = useMediaQuery({
+    query: "(min-width: 1300px)",
+  });
+  useEffect(() => {
+    const handleScroll = () => {
+      // header
+      if (window.scrollY > 40) {
+        setHeader(true);
+      } else {
+        setHeader(false);
+      }
 
-    // search
-    if (window.scrollY > 900){
-      setSearchActive(true)
-    }
-    else{
-      setSearchActive(false)
-    }
-  };
+      // search
+      if (window.scrollY > 900) {
+        setSearchActive(true);
+      } else {
+        setSearchActive(false);
+      }
 
+      //Nav item disappper
+    };
 
-  // add event listener
-  window.addEventListener('scroll', handleScroll);
+    // add event listener
+    window.addEventListener("scroll", handleScroll);
 
-  //remove event listner
-  return () => {
-    window.removeEventListener('scroll', handleScroll);
-  }
+    //remove event listner
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
   
-  
-});
-
   return (
     <div>
       <header
@@ -109,7 +109,6 @@ useEffect(()=>{
               >
                 {theme === "light" ? <RiMoonFill /> : <RiSunFill />}
               </button>
-              
             </div>
             {/* ======== nav open menu ======= */}
             <div
@@ -129,7 +128,7 @@ useEffect(()=>{
               nav
                 ? "max-h-max py-8 px-4 xl:py-1 xl:px-0"
                 : "max-h-0 xl:max-h-max"
-            } flex flex-col w-full gap-y-6 bg-white dark:bg-gray-900 overflow-hidden font-bold xl:font-medium xl:flex-row xl:w-max xl:gap-x-8 xl:h-max xl:bg-transparent transition-all duration-150 text-center xl:text-left uppercase text-sm xl:text-[18px] xl:normal-case `}
+            } flex flex-col w-full gap-y-6 bg-gray-100 dark:bg-gray-900 overflow-hidden font-bold xl:font-medium xl:flex-row xl:w-max xl:gap-x-8 xl:h-max xl:bg-transparent transition-all duration-150 text-center xl:text-left uppercase text-sm xl:text-[18px] xl:normal-case `}
           >
             <Link
               className="cursor-pointer"
@@ -137,6 +136,7 @@ useEffect(()=>{
               activeClass="active"
               smooth={deskTopMode}
               spy={true}
+              onClick={() => setNav(!nav)}
             >
               Home
             </Link>
@@ -147,6 +147,7 @@ useEffect(()=>{
               activeClass="active"
               smooth={deskTopMode}
               spy={true}
+              onClick={() => setNav(!nav)}
             >
               Cars
             </Link>
@@ -157,6 +158,7 @@ useEffect(()=>{
               activeClass="active"
               smooth={deskTopMode}
               spy={true}
+              onClick={() => setNav(!nav)}
             >
               About
             </Link>
@@ -167,6 +169,7 @@ useEffect(()=>{
               activeClass="active"
               smooth={deskTopMode}
               spy={true}
+              onClick={() => setNav(!nav)}
             >
               Why us
             </Link>
@@ -177,6 +180,7 @@ useEffect(()=>{
               activeClass="active"
               smooth={deskTopMode}
               spy={true}
+              onClick={() => setNav(!nav)}
             >
               Testimonial
             </Link>
@@ -187,6 +191,7 @@ useEffect(()=>{
               activeClass="active"
               smooth={deskTopMode}
               spy={true}
+              onClick={() => setNav(!nav)}
             >
               Contact
             </Link>
@@ -197,10 +202,11 @@ useEffect(()=>{
               activeClass="active"
               smooth={deskTopMode}
               spy={true}
+              onClick={() => setNav(!nav)}
             >
               See all cars
             </Link>
-            <SearchMobile />
+            <SearchMobile onClick={() => setNav(!nav)} />
           </nav>
         </div>
       </header>
